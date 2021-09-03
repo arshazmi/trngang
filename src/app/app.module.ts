@@ -11,13 +11,21 @@ import { SchoolComponent } from './school/school.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GeneralModule } from './general/general.module';
+//import { BannerComponent } from './banner/banner.component';
+import { TeacherComponent } from './teacher/teacher.component';
+import { FormComponent } from './teacher/form/form.component';
+import { ClassComponent } from './class/class.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SidebarComponent,
-    SchoolComponent
+    SchoolComponent,
+   // BannerComponent,
+    TeacherComponent,
+    FormComponent,
+    ClassComponent
   ],
   imports: [
     BrowserModule,

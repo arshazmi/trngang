@@ -3,6 +3,10 @@
      padding:0;
      
 } */
-.div .col-md-8{
+.container{
+    margin: 0;
+ }
+ .col-md-8{
     padding: 0;
-}
+   float: left;
+} 

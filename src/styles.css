@@ -32,7 +32,7 @@ http://www.templatemo.com/tm-441-volton
   /*---------------------------------------------------------
    1. Reset
   -------------------------------------------------------- */
-  html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  html, body, div, span, applet, object, iframe, /* h1, h2, h3, h4, h5, h6, p, */ blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -292,7 +292,7 @@ http://www.templatemo.com/tm-441-volton
     color: white;
     overflow-y: hidden;
   }
-  @media screen and (max-width: 1290px) {
+  @media screen and (min-width: 1290px) {
     .sidebar-menu {
       /* overflow-y: scroll; */
       width: 30%;
@@ -431,8 +431,8 @@ http://www.templatemo.com/tm-441-volton
   -------------------------------------------------------- */
   /*------ banner ------ */
   .banner-bg {
-    width: 75vw;
-    height: 100vh;
+    width: 90vw;
+    height: 60vh;
     position: relative;
     background: url("./assets/bg2.jpg");
     background-repeat: no-repeat;
@@ -461,7 +461,8 @@ http://www.templatemo.com/tm-441-volton
   }
   .welcome-text h2 {
     font-size: 42px;
-    padding: 200px;
+    /* padding: 200px; */
+    margin: 200px 0  0 200px;
     font-family: 'robotobold';
     color: white;
     margin-bottom: 30px;
@@ -586,3 +587,5 @@ http://www.templatemo.com/tm-441-volton
     color: #6cc0f7;
   }
   
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,16 @@
+<div class="align">
+    <mat-card class="example-card">
+        <mat-card-subtitle>{{createdAt|custom}}</mat-card-subtitle>
+        <mat-card-title>{{course|uppercase}}</mat-card-title>
+        <mat-card-content>
+          <p>{{hour}} hours</p>
+    
+        </mat-card-content>
+    
+        <mat-card-actions>
+          <a class="material-icons mat"  title="Edit" (click)="openDialog()" data-toggle="tooltip">&#xE254;</a>
+          <a class="material-icons mat"  title="Delete" (click)="del()" data-toggle="tooltip">&#xE872;</a>
+        </mat-card-actions>
+    
+      </mat-card>
+</div>

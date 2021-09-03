@@ -1,0 +1,15 @@
+/* .edit:hover,.delete:hover{
+    cursor: pointer;
+} */
+
+.viewcourse{
+    margin:50px 0 0 20px;
+}
+
+.viewcourse h2{
+    text-align: center;
+}
+
+/* .coursecard{
+    display: grid;
+} */

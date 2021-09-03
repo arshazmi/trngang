@@ -1,0 +1,20 @@
+.example-card {
+    max-width: 200px;
+    background-color: aquamarine;
+  }
+  
+  .align{
+    margin: 10px;
+  }
+
+  .material-icons:hover{
+    cursor: pointer;
+  }
+
+  .mat{
+    padding: 2px 10px;
+    margin-left: 30px;
+  }
+
+
+  

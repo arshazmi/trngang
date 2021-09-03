@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="container-lg">
     <div class="table-responsive">
         <div class="table-wrapper">
@@ -26,12 +26,12 @@
                         <td  > {{ vh.total_hour}}</td>
                         <td  > {{ vh.createdAt|date}}</td>
                         <td  > {{ vh.createdAt|custom}}</td>
-                        <!-- <td  > {{ vh.createdAt|date:'d/M/yy'}}</td> -->
+                        <!-- <td  > {{ vh.createdAt|date:'d/M/yy'}}</td> --
                         <td class="col-2">
-                            <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a> -->
+                            <!-- <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a> --
                             <a class="edit" (click)="edit(vh)" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                             <a class="delete" (click)="del(vh)"  title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                            <!-- <mat-icon>edit</mat-icon> -->
+                            <!-- <mat-icon>edit</mat-icon> --
                         </td>
                     </tr>    
                 </tbody>
@@ -41,4 +41,16 @@
             </div>
         </div>
     </div>
-</div>  
+</div>   -->
+
+<div class="viewcourse">
+    <div class="row">
+        <div class="col-sm-8"><h2> <b>{{title|uppercase}}</b></h2></div>
+        <div class="col-sm-4">
+            <button routerLink="/course/add" mat-raised-button color="primary">Add New</button>
+        </div>
+    </div>
+    <div class="coursecard" *ngFor="let vh of listData" >
+        <app-coursecard [subject]="vh" (changed)="updateDone($event)" (deleted)="del($event)"></app-coursecard>     
+    </div>
+</div>

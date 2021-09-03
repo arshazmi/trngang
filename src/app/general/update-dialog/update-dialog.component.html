@@ -1,0 +1,27 @@
+<p>update-dialog works!</p>
+<h1 mat-dialog-title>Change {{data.course}}?</h1>
+<div mat-dialog-content>
+  <!-- <p>What's your favorite animal?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Favorite Animal</mat-label>
+    <input matInput [(ngModel)]="data.total_hour">
+  </mat-form-field> -->
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Course</mat-label>
+      <input [(ngModel)]="data.course" matInput placeholder="Maths">
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+<br/>
+    <mat-form-field appearance="outline">
+      <mat-label>Total Hour</mat-label>
+      <input  [(ngModel)]="data.total_hour" matInput placeholder="10">
+    </mat-form-field>
+
+  </p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button cdkFocusInitial>Ok</button>
+  <!-- <button mat-button [mat-dialog-close]="data.course" cdkFocusInitial>Ok</button> -->
+</div>

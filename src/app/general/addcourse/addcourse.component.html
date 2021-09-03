@@ -1,5 +1,24 @@
 
-<div class="col form ml-3 mb-5">
+  <app-banner></app-banner>
+  <div class="wrap">
+  <h2>Add Course</h2>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Course</mat-label>
+      <input [(ngModel)]="course" matInput placeholder="Maths">
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+<br/>
+    <mat-form-field appearance="outline">
+      <mat-label>Total Hour</mat-label>
+      <input  [(ngModel)]="hour" matInput placeholder="10">
+    </mat-form-field>
+
+  </p>
+   <button  (click)="save()" mat-raised-button color="primary">Save</button>
+   <button routerLink="/course" mat-raised-button color="primary">Go to course list</button>
+
+<!-- <div class="col form ml-3 mb-5">
         <h2>{{h2}}</h2>
          --<p>{{subject|json}}</p> --
           <div class="row">
@@ -15,4 +34,5 @@
             <input type="button" class="btn btn-primary"  name="save" (click)="save()" value="Save" />
             <a class="ml-5" routerLink ="/course/view">Go to course list</a>
           </div>
-</div> 
+</div>  -->
+</div>

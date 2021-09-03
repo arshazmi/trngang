@@ -15,6 +15,7 @@ export class ViewcourseComponent implements OnInit {
   id:string='';
   update:boolean=false;
   currentSubject={id:'',name:'',total_hour:''};
+
   constructor(private courseService:CourseService) { }
 
   ngOnInit(): void {

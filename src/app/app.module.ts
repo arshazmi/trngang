@@ -7,9 +7,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { BannerComponent } from './banner/banner.component';
 import { SchoolComponent } from './school/school.component';
-
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GeneralModule } from './general/general.module';
@@ -19,7 +17,6 @@ import { GeneralModule } from './general/general.module';
     AppComponent,
     HeaderComponent,
     SidebarComponent,
-    BannerComponent,
     SchoolComponent
   ],
   imports: [

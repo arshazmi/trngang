@@ -7,13 +7,19 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BannerComponent } from './banner/banner.component';
+import { TeacherComponent } from './teacher/teacher.component';
+import { FormComponent } from './teacher/form/form.component';
+import { ClassComponent } from './class/class.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SidebarComponent,
-    BannerComponent
+    BannerComponent,
+    TeacherComponent,
+    FormComponent,
+    ClassComponent
   ],
   imports: [
     BrowserModule,

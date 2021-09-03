@@ -39,10 +39,15 @@ http://www.templatemo.com/tm-441-volton
     font-size: 100%;
     vertical-align: baseline;
   }
-  .container,.col-md-8{
-    margin: 0;
+  .mainbanr{
+    width: 100% !important;
+    margin: 0 !important;
     padding: 0;
-    border: 0;  
+    border: 0; 
+    width: 1200px;
+  }
+  .banr{
+    float: left;
   }
   
   .blue {
@@ -228,13 +233,13 @@ http://www.templatemo.com/tm-441-volton
   
   .main-content,
   .banner-bg {
-    float: right;
-    width: 77%;
+    width: 55%;
+    
   }
   @media screen and (max-width: 1290px) {
     .main-content,
     .banner-bg {
-      width: 70%;
+      width: 100%;
     }
   }
   @media screen and (max-width: 992px) {
@@ -352,7 +357,7 @@ http://www.templatemo.com/tm-441-volton
   }
   .social-icons a {
     font-size: 18px;
-    color: white;
+    color: rgb(92, 88, 88);
   }
   .social-icons a:hover {
     color: #282e35;
@@ -436,6 +441,9 @@ http://www.templatemo.com/tm-441-volton
     z-index: 2;
     float: left;
   }
+  .main-content{
+    float: left;
+  }
   
   .banner-overlay {
     position: absolute;
@@ -496,6 +504,10 @@ http://www.templatemo.com/tm-441-volton
     width: 100%;
     display: block;
   }
+  .social-icons li{
+    font-size: 18px;
+    color: white;
+}
   .project-item:hover .project-hover {
     top: 0;
     opacity: 1;

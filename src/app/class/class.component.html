@@ -9,13 +9,13 @@
                         <h4 class="widget-title">Class details</h4>
                     </div>
                 </div>
-                <div class="row projects-holder">
+                <div class="row projects-holder" *ngIf="clas">
                     <div class="col-md-12 col-sm-6">
-                        <div class="project-item">
-                            <h2>name</h2>
+                        <div class="project-item" *ngFor="let cla of clas">
+                            <h2>cla.firstName</h2>
                             <ul>
-                                <li>startDate</li>
-                                <li>endDate</li>
+                                <li>cla.startDate</li>
+                                <li>cla.endDate</li>
                             </ul>
                             <div class="social-icons">
                                 <ul>

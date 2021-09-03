@@ -1,0 +1,41 @@
+
+
+         
+        <div class="col form ml-3 mb-5">
+            <div class="ml-3" *ngIf="listData">
+              <h3>{{title|uppercase}}</h3>
+              <table class="list-group">
+                <tr class="row"  *ngFor="let vh of listData" (click)="onclickvh(vh)" class="list-group-item list-group-item-action " >
+                  <td class="col-3" > {{ vh.name}}</td> 
+                  <td class="col-2"  > {{ vh.reg}}</td> 
+                  <td class="col-3" > {{ vh.email}}</td> 
+                  <td class="col-2"  > {{ vh.mobile}}</td> 
+                </tr>
+              </table>
+           </div>
+           <h2>Add a School</h2>
+            <div class="row">
+              Enter school:
+              <input type="text" [(ngModel)]="name" />
+            </div>
+            <div class="row">
+                Enter register number:
+                <input type="text" [(ngModel)]="reg" />
+              </div>
+              <div class="row">
+                Enter mobile:
+                <input type="text" [(ngModel)]="mobile" />
+              </div>
+            <div class="row">
+              Enter email id:
+              <input type="text"  [(ngModel)]="email" />
+            </div>
+            <div class="col-5">
+            
+              <input type="button" class="btn btn-primary"  name="save" (click)="save()" value="save" />
+              <!-- <input type="button" class="btn btn-primary" name="edit" (click)="update()" value="Edit" />
+              <input type="button" class="btn btn-primary" name="delete" (click)="del()" value="Delete" /> -->
+            </div>
+          </div>
+        
+      

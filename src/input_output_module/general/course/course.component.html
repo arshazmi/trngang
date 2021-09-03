@@ -1,0 +1,32 @@
+
+
+         
+        <div class="col form ml-3 mb-5">
+          <div class="ml-3" *ngIf="listData">
+            <h3>{{title|uppercase}}</h3>
+            <table class="list-group">
+              <tr class="row"  *ngFor="let vh of listData" (click)="onclickvh(vh)" class="list-group-item list-group-item-action " >
+                <td class="col-10" > {{ vh.name}}</td> 
+                <td class="col-2"  > {{ vh.total_hour}}</td> 
+              </tr>
+            </table>
+            <input type="button" class="btn  mt-2 ml-3" name="edit" (click)="update()" value="Edit" />
+            <input type="button" class="btn  mt-2 ml-5" name="delete" (click)="del()" value="Delete" />
+         </div>
+         <h2>Add a course</h2>
+          <div class="row">
+            Enter course:
+            <input type="text" [(ngModel)]="course" />
+          </div>
+          <div class="row">
+            Enter total hour:
+            <input type="text"  [(ngModel)]="hour" />
+          </div>
+          <div class="col-5">
+          
+            <input type="button" class="btn btn-primary"  name="save" (click)="save()" value="Save" />
+           
+          </div>
+        </div>
+      
+    

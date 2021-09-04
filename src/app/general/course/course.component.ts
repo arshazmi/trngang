@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Course } from 'src/app/models/course';
+import { ICourse } from 'src/app/models/icourse';
 import { CourseService } from 'src/app/service/course.service';
 
 @Component({
@@ -14,10 +16,12 @@ export class CourseComponent implements OnInit {
   course:string="";
   hour:string="";
   id:string='';
+  data:Course={id:'',name:'',total_hour:'',createdAt:Date.now()};
 
   constructor(private courseService:CourseService) { }
 
   ngOnInit(): void {
+   // this.data={id:'',name:'',total_hour:'',createdAt:Date.now()}
     this.load();
   }
 
@@ -37,7 +41,7 @@ export class CourseComponent implements OnInit {
 
 
   save():void{
-    this.courseService.insertCourse(this.course,this.hour).subscribe(data=>{
+    this.courseService.insertCourse( this.course,this.hour ).subscribe(data=>{
       console.log("Inserted",data)
       this.load();
     })

@@ -589,3 +589,8 @@ http://www.templatemo.com/tm-441-volton
   
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/*---------Dialog-----------*/
+.cdk-global-scrollblock {
+  position: static;
+  overflow: hidden !important;
+}

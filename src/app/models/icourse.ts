@@ -1,6 +1,6 @@
-export interface DialogData {
+export interface ICourse {
     id:string;
-    course: string;
+    name: string;
     total_hour: string;
   }
   

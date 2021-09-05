@@ -12,7 +12,7 @@ export class CoursecardComponent implements OnInit {
   @Input() subject:Course={id:'',name:'',total_hour:'',createdAt:Date.now()};
   name:string="";
   hour:string="";
-  id:string='';
+  id:string|undefined='';
   createdAt:any;//date
   data:Course=this.subject;///
   @Output() changed=new EventEmitter();
@@ -31,6 +31,7 @@ export class CoursecardComponent implements OnInit {
       console.log('The dialog was closed');
       console.log(result);
       this.subject=result;
+      this.data=result;///
       this.edit();
     });
   }
@@ -44,12 +45,17 @@ export class CoursecardComponent implements OnInit {
     this.name=this.subject.name;
     this.hour=this.subject.total_hour;
     this.createdAt=this.subject.createdAt;
+    this.data=this.subject;
 
   }
 
   edit():void{
     console.log("edit ",this.subject);
-    this.courseService.updateCourse(this.subject.id,this.subject.name,this.subject.total_hour).subscribe(data=>{
+    // this.courseService.updateCourse(this.subject.id,this.subject.name,this.subject.total_hour).subscribe(data=>{
+    //   console.log("Updated",data);
+    //   this.changed.emit('changed')
+    // });
+    this.courseService.updateCourse(this.data).subscribe(data=>{
       console.log("Updated",data);
       this.changed.emit('changed')
     });

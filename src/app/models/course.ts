@@ -1,9 +1,9 @@
 export class Course {
-    id:string='';
+    id?:string='';
     name: string='';
     total_hour: string='';
-    createdAt:any;
-  //  updatedAt:any;
+    createdAt?:any;
+    updatedAt?:any;
     // constructor(){
     //     this.id='';
     //     this.name='';

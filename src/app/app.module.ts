@@ -15,6 +15,7 @@ import { BannerComponent } from './banner/banner.component';
 import { TeacherComponent } from './teacher/teacher.component';
 import { FormComponent } from './teacher/form/form.component';
 import { ClassComponent } from './class/class.component';
+import { AddclassComponent } from './class/addclass/addclass.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ClassComponent } from './class/class.component';
     BannerComponent,
     TeacherComponent,
     FormComponent,
-    ClassComponent
+    ClassComponent,
+    AddclassComponent
   ],
   imports: [
     BrowserModule,

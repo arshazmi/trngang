@@ -507,7 +507,7 @@ http://www.templatemo.com/tm-441-volton
   }
   .social-icons li{
     font-size: 18px;
-    color: white;
+    color: rgb(90, 90, 90);
 }
   .project-item:hover .project-hover {
     top: 0;

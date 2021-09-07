@@ -11,14 +11,17 @@ import { SchoolService } from 'src/app/service/school.service';
 })
 export class RegisterComponent implements OnInit {
 
-  add:boolean=true;
   listData:any;
   data:School={id:'',schoolName:'',registerNumber:'',email:'',address:'',mobile:''};///
+  add:boolean=this.data.id==='';
   constructor(private sService:SchoolService,
               private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.data.id=this.route.snapshot.params['id'];
+    if(this.route.snapshot.params.id!==undefined){
+      this.data.id=this.route.snapshot.params['id'];
+    }
+    
 
     if(this.data.id!==''){
       this.add=false;

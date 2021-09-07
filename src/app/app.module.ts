@@ -22,7 +22,6 @@ import { SchoolModule } from './school/school.module';
     AppComponent,
     HeaderComponent,
     SidebarComponent,
-   // SchoolComponent,
     BannerComponent,
     TeacherComponent,
     FormComponent,

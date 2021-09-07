@@ -15,13 +15,14 @@ import { BannerComponent } from './banner/banner.component';
 import { TeacherComponent } from './teacher/teacher.component';
 import { FormComponent } from './teacher/form/form.component';
 import { ClassComponent } from './class/class.component';
+import { SchoolModule } from './school/school.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SidebarComponent,
-    SchoolComponent,
+   // SchoolComponent,
     BannerComponent,
     TeacherComponent,
     FormComponent,
@@ -34,6 +35,7 @@ import { ClassComponent } from './class/class.component';
     FormsModule,
     HttpClientModule,
     GeneralModule,
+    SchoolModule,
     BrowserAnimationsModule
   ],
   providers: [],

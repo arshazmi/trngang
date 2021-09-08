@@ -1,9 +1,9 @@
 <div>
-     <!-- <form  (ngSubmit)="onSubmit()" class="p-5">  -->
-        <!-- <h1 *ngIf="isAddMode">Add Teacher</h1>
-        <h1 *ngIf="!isAddMode">Edit Teacher</h1>        -->
+     <form  (ngSubmit)="onSubmit()" class="p-5"> 
+        <h1 *ngIf="isAddMode">Add Teacher</h1>
+        <h1 *ngIf="!isAddMode">Edit Teacher</h1>       
         <!-- <h2>New Teacher </h2><br> -->
-        <form  (ngSubmit)="AddTeacher()" class="p-5"> 
+        <!-- <form  (ngSubmit)="EditTeacher(teacherItem)" class="p-5">  -->
         <div class="form-group">
            <label>FIRSTNAME</label>
            <input type ="text" class="form-control" name="firstName"  [(ngModel)]="teacherItem.firstName"><br>   

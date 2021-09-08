@@ -14,7 +14,7 @@ const routes: Routes = [
   {path:"addclass",component:AddclassComponent},
   {path:"editclass",component:EditclassComponent},
   {path:"addteacher",component:FormComponent},
-  {path:"editteacher",component:FormComponent}
+  {path:"editteacher/:id",component:FormComponent}
   // ]
   // }
 ];

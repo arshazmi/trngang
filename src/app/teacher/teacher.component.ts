@@ -19,7 +19,7 @@ export class TeacherComponent implements OnInit {
     mobile:''
    }]
 
-  constructor(private router:Router,
+  constructor(private router:Router,private route: ActivatedRoute,
     private teacherService:TeacherService) { }
 
   ngOnInit(): void {
@@ -27,14 +27,19 @@ export class TeacherComponent implements OnInit {
       console.log(data);
       this.teachers=JSON.parse(JSON.stringify(data));
   })
+
   }
 
-  // editTeacher(item:any)
-  // {
-  //   localStorage.setItem("editTeacherId", item._id.toString());
-  //   this.router.navigate(['editteacher']);
+  editTeacher(item:any)
+  {console.log(item);
+    // localStorage.setItem("editTeacherId", item.id.toString());
+  //   this.route.params.subscribe(params => {
+  //     console.log("ID "+params['id'] ); 
+  // });
+  // let id=this.route.params.['id'];
+    this.router.navigate(['editteacher',item.id]);
 
-  // }
+  }
   deleteTeacher(product:any)
   {
     this.teacherService.deleteTeacher(product.id)

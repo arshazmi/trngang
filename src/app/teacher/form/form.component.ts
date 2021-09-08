@@ -8,11 +8,13 @@ import { ActivatedRoute} from '@angular/router';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-// isAddMode: boolean=false;
+isAddMode: boolean=true;
+submitted = false;
+id: string="";
+
   constructor(private teacherService: TeacherService,private router: Router,private route: ActivatedRoute,) { }
- id:any;
+
   teacherItem={
-    id:'',
     firstName: '',
     lastName: '',
     salary: '',
@@ -22,33 +24,45 @@ export class FormComponent implements OnInit {
    }
   ngOnInit(): void {
       this.id = this.route.snapshot.params['id'];
-      console.log(this.id)
-    //     this.isAddMode = !this.id;
+      // console.log(this.id)
+        this.isAddMode = !this.id;
+    // let idd = localStorage.getItem("editClassId");
+    // console.log(id);
+    this.teacherService.getTeacher(this.id)
+    .subscribe((data)=>{
+      this.teacherItem=JSON.parse(JSON.stringify(data));
+      console.log("item"+this.teacherItem)
+  })
+  
   }
 
-  //   onSubmit() {
-//     // this.submitted = true;
+    onSubmit() {
+    this.submitted = true;
 
-//     if (this.isAddMode) {
-//         this.AddTeacher();
-//     }
-//      else {
-//         this.EditTeacher(this.classItem);
-//     }
-// }
+    if (this.isAddMode) {
+        this.AddTeacher();
+    }
+     else {
+        this.EditTeacher(this.teacherItem);
+    }
+}
 
   AddTeacher()
   {    
     this.teacherService.newTeacher(this.teacherItem);
-    // console.log("success");    
+    console.log(this.teacherItem);    
     alert("Success");
     this.router.navigate(['/teacher']);
   }
 
   EditTeacher(item:any)
   {
-    localStorage.setItem("editTeacherId", item.id.toString());
-    this.router.navigate(['/teacher']);
-
+    // let id = localStorage.getItem("editTeacherId"); 
+    let id=this.id;
+    // console.log("id"+id);
+    console.log("teacheritem"+item) ;
+    this.teacherService.editTeacher(id,item);
+    alert("Success");
+    this.router.navigate(['teacher']);
   }
 }

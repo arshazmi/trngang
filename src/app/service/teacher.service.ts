@@ -13,12 +13,13 @@ export class TeacherService {
   getTeachers():Observable<any>{
     
     return this.http.get(`${this.baseUrl}`);
-    console.log(this.getTeachers);
+    
   }
 
-  // getTeacher(id:any){
-  //   return this.http.get(`${this.baseUrl}/${id}`);
-  // }
+  getTeacher(id:any){
+    console.log(id);
+    return this.http.get(`${this.baseUrl}/${id}`);
+  }
 
   newTeacher(item:any)
   {   
@@ -26,12 +27,13 @@ export class TeacherService {
     .subscribe(data =>{console.log(data)})
   }
  
-  // editTeacher(id:any,product:any)
-  // {
-  //   console.log('client update')
-  //   return this.http.put(`${this.baseUrl}/${id}`,product)
-  //   .subscribe(data =>{console.log(data)})
-  // }
+  editTeacher(id:any,item:any)
+  {
+    console.log('teacher updated');
+    return this.http.put(`${this.baseUrl}/${id}`,{firstName:item.firstName,lastName:item.lastName,salary:item.salary,experience:item.experience,gender:item.gender,mobile:item.mobile})
+    .subscribe(data =>{"updatedteacher"+console.log(data)});
+    
+  }
   deleteTeacher(id:any)
   {
 

@@ -1,5 +1,5 @@
-<p>update</p>
-<h1 mat-dialog-title>Change {{data.name}}?</h1>
+<div class="wrap">
+<h1 mat-dialog-title>Change Subject {{data.name}}?</h1>
 <div mat-dialog-content>
   <p>
     <mat-form-field appearance="outline">
@@ -19,4 +19,5 @@
   <button mat-button (click)="onNoClick()">No Thanks</button>
   <button mat-button  [mat-dialog-close]="data"  cdkFocusInitial>Ok</button>
   <!-- <button mat-button [mat-dialog-close]="data.course" cdkFocusInitial>Ok</button> -->
+</div>
 </div>

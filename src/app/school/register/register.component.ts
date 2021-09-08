@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { School } from 'src/app/models/school';
-import { CourseService } from 'src/app/service/course.service';
 import { SchoolService } from 'src/app/service/school.service';
 
 @Component({
@@ -13,7 +12,7 @@ export class RegisterComponent implements OnInit {
 
   listData:any;
   data:School={id:'',schoolName:'',registerNumber:'',email:'',address:'',mobile:''};///
-  add:boolean=this.data.id==='';
+  add:boolean=true;
   constructor(private sService:SchoolService,
               private route:ActivatedRoute) { }
 
@@ -49,6 +48,10 @@ export class RegisterComponent implements OnInit {
       this.data.email="";
     })
   }else{
+    console.log(this.data);
+    this.data.regnum=this.data.registerNumber;
+    this.data.name=this.data.schoolName;
+    console.log(this.data,"to int");
     this.sService.updateSchool(this.data).subscribe(data=>{
       console.log("Updated",data)   
       this.data.schoolName="";

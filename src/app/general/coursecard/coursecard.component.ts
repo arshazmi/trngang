@@ -23,7 +23,8 @@ export class CoursecardComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(UpdateDialogComponent, {
-      width: '250px',
+      width: '550px',
+      height:'400px',
       data: {id:this.id,name: this.name, total_hour: this.hour}
     });
 

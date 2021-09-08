@@ -3,32 +3,32 @@
 <!-- <app-banner></app-banner> -->
 <div class="wrap">
 <h2 *ngIf="add">Register School</h2>
-<h2 *ngIf="!add">Update School of id {{data.id}}</h2>
+<h2 *ngIf="!add">Update School</h2>
 
 <p>
   <mat-form-field appearance="outline">
     <mat-label>School Name</mat-label>
-    <input [(ngModel)]="data.schoolName" matInput placeholder=" Ousis School">
+    <input [(ngModel)]="data.schoolName"  matInput placeholder=" Ousis School">
   </mat-form-field>
 <br/>
   <mat-form-field appearance="outline">
     <mat-label>Register Number</mat-label>
-    <input  [(ngModel)]="data.registerNumber" matInput placeholder="10">
+    <input [(ngModel)]="data.registerNumber" matInput placeholder="10">
   </mat-form-field>
   <br/>
   <mat-form-field appearance="outline">
     <mat-label>Email</mat-label>
-    <input  [(ngModel)]="data.email" matInput placeholder="10">
+    <input  [(ngModel)]="data.email" matInput placeholder="abc@xyz.com">
   </mat-form-field>
   <br/>
   <mat-form-field appearance="outline">
     <mat-label>Address</mat-label>
-    <input  [(ngModel)]="data.address" matInput placeholder="10">
+    <input  [(ngModel)]="data.address" matInput placeholder="34L,Silicon vlley,California">
   </mat-form-field>
   <br/>
   <mat-form-field appearance="outline">
     <mat-label>Phone Number</mat-label>
-    <input  [(ngModel)]="data.mobile" matInput placeholder="10">
+    <input  [(ngModel)]="data.mobile" matInput placeholder="254667">
   </mat-form-field>
 
 </p>

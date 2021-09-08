@@ -20,7 +20,7 @@ body {
     margin: 0px 0px 20px;
 }
 .info{
-    background-color: aquamarine !important;
+    background-color: gainsboro !important;
 }
 /* .event-list > li > time {
     display: inline-block;
@@ -112,7 +112,7 @@ body {
     color: rgb(75, 110, 168) !important;
 }
 .twitter a {
-    color: rgb(79, 213, 248) !important;
+    color: rgb(23, 51, 58) !important;
 }
 .facebook a {
     color: rgb(16, 80, 45) !important;
@@ -126,7 +126,7 @@ body {
 }
 .twitter:hover a {
     color: rgb(255, 255, 255) !important;
-    background-color: rgb(79, 213, 248) !important;
+    background-color:rgb(23, 51, 58) !important;
 }
 .google-plus:hover a {
     color: rgb(255, 255, 255) !important;

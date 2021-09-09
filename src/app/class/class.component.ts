@@ -28,10 +28,12 @@ export class ClassComponent implements OnInit {
 
   deleteClass(cla:any)
   {
+    
     this.classService.deleteClass(cla.id)
-      // .subscribe((cla)=> {
-      //   this.clas = this.clas.filter( p => p!== cla);
-      // })
+      .subscribe((data)=> {
+        console.log(data);
+        this.clas = this.clas.filter( p => p!== cla);
+      })
   }
 
   editClass(item:any)

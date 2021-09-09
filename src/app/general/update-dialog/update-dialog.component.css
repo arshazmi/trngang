@@ -1,0 +1,18 @@
+h1,p{
+    text-align: center;
+    
+}
+
+.wrap{
+    margin-top: 50px;
+}
+
+::ng-deep .mat-form-field {
+    width: 400px;
+}
+
+::ng-deep .mat-dialog-actions button{
+  background-color: rgb(235, 235, 235);
+  left: 25%;
+  margin-right: 5vw;
+}

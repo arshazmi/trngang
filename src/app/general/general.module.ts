@@ -18,7 +18,7 @@ import { BannerComponent } from './banner/banner.component';
 import { CoursecardComponent } from './coursecard/coursecard.component';
 import { UpdateDialogComponent } from './update-dialog/update-dialog.component';
 //import {MatIconModule} from '@angular/material/icon'
-
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,8 @@ import { UpdateDialogComponent } from './update-dialog/update-dialog.component';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatGridListModule
     
   ]
 })

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
+import { Course } from 'src/app/models/course';
 import { CourseService } from 'src/app/service/course.service';
 
 
@@ -15,6 +16,7 @@ export class AddcourseComponent implements OnInit {
   hour:string="";
   id:string='';
   edit:boolean=false;
+  data:Course=new Course();///
   @Input() subject={id:this.id,name:this.course,total_hour:this.hour};
   constructor(private courseService:CourseService) { }
 
@@ -23,6 +25,7 @@ export class AddcourseComponent implements OnInit {
       this.id=this.subject.id;
       this.course=this.subject.name;
       this.hour=this.subject.total_hour;
+      this.data=this.subject;///
       this.edit=true;
     }
   }
@@ -31,11 +34,18 @@ export class AddcourseComponent implements OnInit {
     if(this.edit){
       this.update();
     }else{
-    this.courseService.insertCourse(this.course,this.hour).subscribe(data=>{
-      console.log("Inserted",data)
-      this.course="";
-      this.hour="";
+    // this.courseService.insertCourse(this.course,this.hour).subscribe(data=>{
+    //   console.log("Inserted",data)
+    //   this.course="";
+    //   this.hour="";
     
+    // })
+    this.courseService.insertCourse(this.data).subscribe(data=>{
+      console.log("Inserted",data)
+      // this.course="";
+      // this.hour="";
+      this.data.name="";
+      this.data.total_hour="";
     })
   } 
   }
@@ -47,7 +57,11 @@ export class AddcourseComponent implements OnInit {
     }else{
      
       
-    this.courseService.updateCourse(this.id,this.course,this.hour).subscribe(data=>{
+    // this.courseService.updateCourse(this.id,this.course,this.hour).subscribe(data=>{
+    //   console.log("Updated",data);
+    //  this.changed.emit('updated output test'+data)
+    // })
+    this.courseService.updateCourse(this.data).subscribe(data=>{
       console.log("Updated",data);
      this.changed.emit('updated output test'+data)
     })

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Course } from '../models/course';
 
 @Injectable({
   providedIn: 'root'
@@ -10,20 +11,27 @@ export class CourseService {
   
   constructor(private http:HttpClient) { }
 
-  getCourse():Observable<any>{
-    return this.http.get(`${this.baseUrl}`);
+  getCourse():Observable<Course[]>{
+    return this.http.get<Course[]>(`${this.baseUrl}`);
   }
 
-  insertCourse(course:string,total_hour:string):Observable<any>{
-    return this.http.post(`${this.baseUrl}`,{name:course,total_hour:total_hour});
+  // insertCourse(course:string,total_hour:string):Observable<Course>{
+  //   return this.http.post<Course>(`${this.baseUrl}`,{name:course,total_hour:total_hour});
+  // }
+  insertCourse(course:Course):Observable<Course>{
+    return this.http.post<Course>(`${this.baseUrl}`,course);
   }
 
-  updateCourse(id:string,course:string,total_hour:string):Observable<any>{
-    return this.http.put(`${this.baseUrl}/${id}`,{name:course,total_hour:total_hour});
+  // updateCourse(id:string|undefined,course:string,total_hour:string):Observable<string>{
+  //   return this.http.put<string>(`${this.baseUrl}/${id}`,{name:course,total_hour:total_hour});
+  // }
+
+  updateCourse(course:Course):Observable<string>{
+    return this.http.put<string>(`${this.baseUrl}/${course.id}`,course);
   }
 
-  delCourse(id:string):Observable<any>{
-    return this.http.delete(`${this.baseUrl}/${id}`);
+  delCourse(id:string):Observable<string>{
+    return this.http.delete<string>(`${this.baseUrl}/${id}`);
   }
 
 }

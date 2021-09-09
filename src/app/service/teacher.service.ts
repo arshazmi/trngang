@@ -6,45 +6,40 @@ import { Observable } from 'rxjs';
 })
 export class TeacherService {
 
-  private baseUrl =' http://localhost:8081/api/course';
+  private baseUrl =' http://localhost:8081/api/teacher';
   
   constructor(private http:HttpClient) { }
 
-  getCourse():Observable<any>{
+  getTeachers():Observable<any>{
+    
     return this.http.get(`${this.baseUrl}`);
+    
   }
 
-  insertCourse(course:string,total_hour:string):Observable<any>{
-    return this.http.post(`${this.baseUrl}`,{name:course,total_hour:total_hour});
+  getTeacher(id:any){
+    console.log(id);
+    return this.http.get(`${this.baseUrl}/${id}`);
   }
 
-  updateCourse(id:string,course:string,total_hour:string):Observable<any>{
-    return this.http.put(`${this.baseUrl}/${id}`,{name:course,total_hour:total_hour});
+  newTeacher(item:any)
+  {   
+    return this.http.post(`${this.baseUrl}`,{firstname:item.firstName,lastname:item.lastName,salary:item.salary,experience:item.experience,gender:item.gender,mobile:item.mobile})
+    .subscribe(data =>{console.log(data)})
   }
-
-  delCourse(id:string):Observable<any>{
-    return this.http.delete(`${this.baseUrl}/${id}`);
+ 
+  editTeacher(id:any,item:any)
+  {
+    console.log('teacher updated');
+    return this.http.put(`${this.baseUrl}/${id}`,{firstName:item.firstName,lastName:item.lastName,salary:item.salary,experience:item.experience,gender:item.gender,mobile:item.mobile})
+    .subscribe(data =>{"updatedteacher"+console.log(data)});
+    
   }
-  // constructor(private http: HttpClient) { }
+  deleteTeacher(id:any)
+  {
 
-  // getTeachers(){
-  //   return this.http.get("/teacher/");
-  // }
+    return this.http.delete(`${this.baseUrl}/${id}`)
+    // .subscribe(data =>{console.log(data)})
 
-  // getTeacherById(id:any){
-  //   return this.http.get("/teacher/" + id);
-  // }
-  // deleteTeacher(id:any){
-  //   return this.http.delete("/teacher/" + id);
-  // }
-
-  // editTeacher(id:any,data:any){
-  //   return this.http.put("/teacher/"+id, data)
-  // }
-
-  // addTeacher(item:any){
-  //   return this.http.post("/teacher/", {"teacher":item})
-  //   .subscribe(data =>{console.log(data)})
-  // }
+  }
 }
 

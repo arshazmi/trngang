@@ -4,11 +4,6 @@
         <div class="content-wrapper">
             <!-- PROJECTS -->
             <div class="page-section" id="projects">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h4 class="widget-title">Class details</h4>
-                    </div>
-                </div>
                 <div class="row projects-holder" *ngIf="clas">
                     <div class="col-md-12 col-sm-6">
                         <div class="project-item" *ngFor="let cla of clas">
@@ -19,11 +14,11 @@
                             </ul>
                             <div class="social-icons">
                                 <ul>
-                                    <li>
-                                        <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                    <li (click)="deleteClass(cla)">
+                                       <i class="fa fa-trash" aria-hidden="true" (click)="deleteClass(cla)"></i>
                                     </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                    <li (click)="editClass(cla)" >
+                                        <a  ><i class="fa fa-pencil" aria-hidden="true"></i></a>
                                     </li>
                                 </ul>
                             </div>
@@ -34,8 +29,9 @@
                 <div>
                     <hr />
                     <br />
-                    <h1>New Class? Click here...<i class="fa fa-plus" aria-hidden="true"></i></h1>
+                    <h2 >Add New Class <a routerLink='/addclass'><i class="fa fa-plus" aria-hidden="true"></i></a> </h2>
                     <br />
+                    <router-outlet  ></router-outlet>
                 </div>
             </div>
             <hr />

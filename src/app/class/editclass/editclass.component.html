@@ -1,0 +1,47 @@
+<p>editclass </p>
+<div>
+    <form
+      class="text-center border border-light p-5"
+      (ngSubmit)="editClass()">
+      <div class="form-row mb-4">
+        <div class="col">
+          <!-- name -->
+          <input
+            type="text"
+            id="defaultRegisterFormName"
+            class="form-control"
+            placeholder=" name"
+            name="name"
+            [(ngModel)]="classItem.name"
+          />
+        </div>
+      </div>
+  
+      <!-- Startdate -->
+      <input
+        type="text"
+        id="defaultRegisterFormStartdate"
+        class="form-control mb-4"
+        placeholder="Start date"
+        name="startDate"
+        [(ngModel)]="classItem.startDate"
+      />
+  
+      <!-- enddate -->
+      <input
+        type="text"
+        id="defaultRegisterFormEnddate"
+        class="form-control"
+        placeholder="end date"
+        name="endDate"
+        aria-describedby="defaultRegisterFormPasswordHelpBlock"
+        [(ngModel)]="classItem.endDate"
+      /><br />
+  
+      <!-- Add button -->
+      <button block="true" class="my-4 btn btn-primary" type="submit">
+        SAVE
+      </button>
+    </form>
+  </div>
+    <!-- Default form register -->

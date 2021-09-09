@@ -15,8 +15,8 @@ import { TeacherComponent } from './teacher/teacher.component';
 import { FormComponent } from './teacher/form/form.component';
 import { ClassComponent } from './class/class.component';
 import { AddclassComponent } from './class/addclass/addclass.component';
+import { EditclassComponent } from './class/editclass/editclass.component';
 import { SchoolModule } from './school/school.module';
-
 
 @NgModule({
   declarations: [

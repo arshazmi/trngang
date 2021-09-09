@@ -5,13 +5,15 @@
   <p>
     <mat-form-field appearance="outline">
       <mat-label>Course</mat-label>
-      <input [(ngModel)]="course" matInput placeholder="Maths">
+      <!-- <input [(ngModel)]="course" matInput placeholder="Maths"> -->
+      <input [(ngModel)]="data.name" matInput placeholder="Maths">
       <!-- <mat-hint>Hint</mat-hint> -->
     </mat-form-field>
 <br/>
     <mat-form-field appearance="outline">
       <mat-label>Total Hour</mat-label>
-      <input  [(ngModel)]="hour" matInput placeholder="10">
+      <input  [(ngModel)]="data.total_hour" matInput placeholder="10">
+      <!-- <input  [(ngModel)]="hour" matInput placeholder="10"> -->
     </mat-form-field>
 
   </p>

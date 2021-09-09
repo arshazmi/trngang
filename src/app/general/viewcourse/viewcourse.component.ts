@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Course } from 'src/app/models/course';
 import { CourseService } from 'src/app/service/course.service';
 
 @Component({
@@ -9,24 +10,17 @@ import { CourseService } from 'src/app/service/course.service';
 export class ViewcourseComponent implements OnInit {
   heading='Edit subject';
   title='course details';
-  listData:any;
+  listData:Course[]=[];
   course:string="";
   hour:string="";
   id:string='';
-  update:boolean=false;
-  currentSubject={id:'',name:'',total_hour:''};
+  //update:boolean=false;
+  currentSubject={id:'',course:'',total_hour:''};
 
   constructor(private courseService:CourseService) { }
 
   ngOnInit(): void {
     this.load();
-  }
-
-  onclickvh(an:any):void{
-    console.log(an);
-    this.course=an.name;
-    this.hour=an.total_hour;
-    this.id=an.id;
   }
 
   load():void{
@@ -36,16 +30,8 @@ export class ViewcourseComponent implements OnInit {
     })
   }
 
-  edit(an:any):void{
-    console.log('Pencil clicked');
-    this.currentSubject=an;
-    console.log("current subject",an);
-    this.update=true;
-  }
-
   updateDone(evt:any):void{
     console.log(evt)
-    this.update=false;
     this.load();
   }
 

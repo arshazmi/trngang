@@ -50,7 +50,8 @@
             <button routerLink="/course/add" mat-raised-button color="primary">Add New</button>
         </div>
     </div>
-    <div class="coursecard" *ngFor="let vh of listData" >
-        <app-coursecard [subject]="vh" (changed)="updateDone($event)" (deleted)="del($event)"></app-coursecard>     
+    <mat-grid-list cols="4" >
+        <div *ngFor="let vh of listData" >
+        <mat-grid-tile> <app-coursecard [subject]="vh" (changed)="updateDone($event)" (deleted)="del($event)"></app-coursecard> </mat-grid-tile> 
     </div>
-</div>
+</mat-grid-list>

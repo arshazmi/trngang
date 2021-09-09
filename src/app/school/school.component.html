@@ -1,19 +1,32 @@
 
-
          
-        <div class="col form ml-3 mb-5">
-            <div class="ml-3" *ngIf="listData">
-              <h3>{{title|uppercase}}</h3>
-              <table class="list-group">
-                <tr class="row"  *ngFor="let vh of listData" (click)="onclickvh(vh)" class="list-group-item list-group-item-action " >
-                  <td class="col-3" > {{ vh.name}}</td> 
-                  <td class="col-2"  > {{ vh.reg}}</td> 
+        <div class="col form mb-5 wrap">
+           
+              <app-banner-school></app-banner-school>
+              <div class="ml-3" *ngIf="listData">
+              <h3 style="text-align:center">{{title}}</h3> 
+
+           
+
+      <!-- For listing school as card from list component -->
+               <ul *ngFor="let vh of listData" >
+                <app-list  [school]="vh" (changed)="updateDone($event)" (deleted)="del($event)"></app-list>
+              </ul>
+       <!-- End of listing school as card from list component -->
+
+              <button class="btn btn-primary" routerLink="/school/add" mat-raised-button color="primary">Add New</button>
+
+             
+              <!-- <table class="list-group">
+                <tr class="row"  *ngFor="let vh of listData"  class="list-group-item list-group-item-action " >
+                  <td class="col-3" > {{ vh.schoolName}}</td> 
+                  <td class="col-2"  > {{ vh.registerNumber}}</td> 
                   <td class="col-3" > {{ vh.email}}</td> 
                   <td class="col-2"  > {{ vh.mobile}}</td> 
                 </tr>
-              </table>
+              </table> -->
            </div>
-           <h2>Add a School</h2>
+           <!-- <h2>Add a School</h2>
             <div class="row">
               Enter school:
               <input type="text" [(ngModel)]="name" />
@@ -30,12 +43,12 @@
               Enter email id:
               <input type="text"  [(ngModel)]="email" />
             </div>
-            <div class="col-5">
+            <div class="col-5"> -->
             
-              <input type="button" class="btn btn-primary"  name="save" (click)="save()" value="save" />
-              <!-- <input type="button" class="btn btn-primary" name="edit" (click)="update()" value="Edit" />
-              <input type="button" class="btn btn-primary" name="delete" (click)="del()" value="Delete" /> -->
-            </div>
+              <!-- <input type="button" class="btn btn-primary"  name="save" (click)="save()" value="save" /> -->
+              <!-- <input type="button" class="btn btn-primary" name="edit"  value="Edit" />
+              <input type="button" class="btn btn-primary" name="delete"  value="Delete" /> -->
+            <!-- </div> -->
           </div>
         
-      
+       

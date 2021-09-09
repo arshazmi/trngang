@@ -285,7 +285,7 @@ http://www.templatemo.com/tm-441-volton
   -------------------------------------------------------- */
   .sidebar-menu {
     float: left;
-    width: 23%;
+    width: 15.5%;/**from 23*/
     height: 100%;
     position: fixed;
     background-color: #5f6d7e;
@@ -304,11 +304,11 @@ http://www.templatemo.com/tm-441-volton
   }
   
   .profile-image {
-    width: 150px;
-    height: 150px;
+    width: 120px;/*150px;*/
+    height:120px; /*150px;*/
     border: 4px solid white;
-    -webkit-border-radius: 75px;
-    border-radius: 75px;
+    -webkit-border-radius:60px; /* 75px; */
+    border-radius: 60px;
     overflow: hidden;
     margin-bottom: 20px;
   }
@@ -432,7 +432,7 @@ http://www.templatemo.com/tm-441-volton
   /*------ banner ------ */
   .banner-bg {
     width: 90vw;
-    height: 60vh;
+    height: 30vh;/*reduced  banner height */
     position: relative;
     background: url("./assets/bg2.jpg");
     background-repeat: no-repeat;
@@ -462,7 +462,7 @@ http://www.templatemo.com/tm-441-volton
   .welcome-text h2 {
     font-size: 42px;
     /* padding: 200px; */
-    margin: 200px 0  0 200px;
+    margin: 5vh 0  0 200px;/*changed banner h2 position*/
     font-family: 'robotobold';
     color: white;
     margin-bottom: 30px;

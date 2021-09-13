@@ -1,0 +1,59 @@
+<app-banner-main [item] ="toStudent" ></app-banner-main>
+<div class="main-content">
+    <div class="fluid-container">
+        <div class="content-wrapper">
+            <!-- PROJECTS -->
+            <div class="page-section" id="projects">
+                <div class="row projects-holder">
+                    <div class="form-group">
+                        <label>Enter teachers FIRSTNAME</label>
+                      <input type ="text" name="name" #teachername><br>
+                      </div>
+                       <input type="button" class="btn" (click)="getStudOfTeacher(teachername.value)" value="Search">
+                    <div class="col-md-12 col-sm-6" *ngIf="normal">
+                        <div class="project-item" *ngFor="let stud of student">
+                            <h2>{{stud.firstName}}</h2>
+                            <ul>
+                                <li>{{stud.lastName}}</li>
+                                <li>{{stud.email}}</li>
+                                <li>{{stud.gender}}</li>
+                                <li>{{stud.mobile}}</li>
+                            </ul>
+                            <div class="social-icons">
+                                <ul>
+                                    <li (click)="deleteStudent(stud)">
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                    </li>
+                                    <li (click)="editStudent(stud)" >
+                                        <a ><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-6" *ngIf="!normal">
+                        <div class="project-item" *ngFor="let d of data">
+                            <h2>{{d.firstName}}</h2>
+                            <ul>
+                                <li>{{d.lastName}}</li>
+                                <li>{{d.class.name}}</li>
+                                <li>{{d.class.courses[0].name}}</li>
+                           
+                            </ul>
+                            
+                        
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <hr />
+                    <br />
+                    <h1><a routerLink="/addstudent" >Student? Click here...<i class="fa fa-plus" aria-hidden="true"></i></a></h1>
+                    <br/>
+                </div>
+            </div>
+            <hr/>
+        </div>
+    </div>
+</div>

@@ -13,10 +13,12 @@ import { GeneralModule } from './general/general.module';
 import { BannerComponent } from './banner/banner.component';
 import { TeacherComponent } from './teacher/teacher.component';
 import { FormComponent } from './teacher/form/form.component';
+import { SFormComponent } from './student/form/form.component';
 import { ClassComponent } from './class/class.component';
 import { AddclassComponent } from './class/addclass/addclass.component';
 import { EditclassComponent } from './class/editclass/editclass.component';
 import { SchoolModule } from './school/school.module';
+import { StudentComponent } from './student/student.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { SchoolModule } from './school/school.module';
     FormComponent,
     ClassComponent,
     AddclassComponent,
-    EditclassComponent
+    EditclassComponent,
+    StudentComponent,
+    SFormComponent
   ],
   imports: [
     BrowserModule,

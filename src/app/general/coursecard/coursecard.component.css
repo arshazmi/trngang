@@ -6,6 +6,9 @@
   .align{
     margin: 10px;
     width: 200px;
+
+    /* width: 170px; */
+    /* height:200px; */
   }
 
   .material-icons:hover{

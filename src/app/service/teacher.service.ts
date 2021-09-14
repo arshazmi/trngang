@@ -23,7 +23,7 @@ export class TeacherService {
 
   newTeacher(item:any)
   {   
-    return this.http.post(`${this.baseUrl}`,{firstname:item.firstName,lastname:item.lastName,salary:item.salary,experience:item.experience,gender:item.gender,mobile:item.mobile})
+    return this.http.post(`${this.baseUrl}`,{firstName:item.firstname,lastName:item.lastname,salary:item.salary,experience:item.experience,gender:item.gender,mobile:item.mobile})
     .subscribe(data =>{console.log(data)})
   }
  

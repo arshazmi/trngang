@@ -6,8 +6,11 @@ import { ClassComponent } from './class/class.component';
 import { AddclassComponent } from './class/addclass/addclass.component';
 import { EditclassComponent } from './class/editclass/editclass.component';
 import { FormComponent } from './teacher/form/form.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './login/register/register.component';
 const routes: Routes = [
-  {path:'',component:SchoolComponent},
+  {path:'',component:LoginComponent},
+  {path:'register',component:RegisterComponent},
   {path:'school',component:SchoolComponent},
   {path:"teacher",component:TeacherComponent},
   {path:"class",component:ClassComponent},

@@ -22,7 +22,7 @@ const routes: Routes = [
   {path:"editclass",component:EditclassComponent},
   {path:"addteacher",component:FormComponent},
   {path:"editteacher/:id",component:FormComponent},
-  {path:"student",component:StudentComponent},
+  {path:"student",component:StudentComponent,canActivate: [AuthGuard]},
   {path:"addstudent",component:SFormComponent},
   {path:"editstudent/:id",component:SFormComponent}
   // ]

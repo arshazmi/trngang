@@ -9,6 +9,8 @@ import { FormComponent } from './teacher/form/form.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register/register.component';
 import {AuthGuard} from './auth.guard';
+import { SFormComponent } from './student/form/form.component';
+import { StudentComponent } from './student/student.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -19,7 +21,10 @@ const routes: Routes = [
   {path:"addclass",component:AddclassComponent},
   {path:"editclass",component:EditclassComponent},
   {path:"addteacher",component:FormComponent},
-  {path:"editteacher/:id",component:FormComponent}
+  {path:"editteacher/:id",component:FormComponent},
+  {path:"student",component:StudentComponent},
+  {path:"addstudent",component:SFormComponent},
+  {path:"editstudent/:id",component:SFormComponent}
   // ]
   // }
 ];

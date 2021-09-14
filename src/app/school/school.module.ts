@@ -11,12 +11,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { BannerComponent } from './banner/banner.component';
+
+import { MatTableModule } from '@angular/material/table';
+import { SchooltableComponent } from './schooltable/schooltable.component'  
 @NgModule({
   declarations: [
     ListComponent,
     RegisterComponent,
     SchoolComponent,
-    BannerComponent
+    BannerComponent,
+    SchooltableComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +29,8 @@ import { BannerComponent } from './banner/banner.component';
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule
   ]
 })
 export class SchoolModule { }

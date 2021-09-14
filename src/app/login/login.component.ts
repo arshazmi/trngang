@@ -27,12 +27,15 @@ isloggedin:string="false";
     .subscribe(
       res => {
         console.log("login res"+res);
+        if(res){
         this._router.navigate(['/class'])
         console.log(res);
         this.isloggedin="true"
         
         localStorage.setItem('token', this.isloggedin)
-        
+        }else{
+          console.log("Login failed");
+        }
       },
       err => {
         console.log(err);

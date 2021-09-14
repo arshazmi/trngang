@@ -34,7 +34,7 @@ import { StudentComponent } from './student/student.component';
     AddclassComponent,
     EditclassComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
     StudentComponent,
     SFormComponent
   ],

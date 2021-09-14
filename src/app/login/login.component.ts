@@ -9,7 +9,7 @@ import { FormBuilder,Validators} from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+isloggedin:string="false";
   user={username:'',
   password:''}
 
@@ -29,7 +29,9 @@ export class LoginComponent implements OnInit {
         console.log("login res"+res);
         this._router.navigate(['/class'])
         console.log(res);
-        // localStorage.setItem('token', res.token)
+        this.isloggedin="true"
+        
+        localStorage.setItem('token', this.isloggedin)
         
       },
       err => {

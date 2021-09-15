@@ -19,15 +19,18 @@ id: string="";
   ngOnInit(): void {
     console.log("reached form")
       this.id = this.route.snapshot.params['id'];
-      // console.log(this.id)
+      console.log(this.id,!this.id);
         this.isAddMode = !this.id;
     // let idd = localStorage.getItem("editClassId");
     // console.log(id);
-    this.studService.getStudent(this.id)
+    if(!this.isAddMode){
+      this.studService.getStudent(this.id)
     .subscribe((data)=>{
       this.studentItem=JSON.parse(JSON.stringify(data));
       console.log("item"+this.studentItem)
   })
+    }
+    
   
   }
 

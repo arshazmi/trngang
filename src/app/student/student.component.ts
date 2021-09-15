@@ -42,7 +42,7 @@ export class StudentComponent implements OnInit {
   //     console.log("ID "+params['id'] ); 
   // });
   // let id=this.route.params.['id'];
-    this.router.navigate(['editstudent',item.id]);
+    this.router.navigate(['/student/editstudent',item.id]);
 
   }
   deleteStudent(product:any)

@@ -9,8 +9,6 @@ import { FormComponent } from './teacher/form/form.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register/register.component';
 import {AuthGuard} from './auth.guard';
-import { SFormComponent } from './student/form/form.component';
-import { StudentComponent } from './student/student.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -22,9 +20,9 @@ const routes: Routes = [
   {path:"editclass",component:EditclassComponent},
   {path:"addteacher",component:FormComponent},
   {path:"editteacher/:id",component:FormComponent},
-  {path:"student",component:StudentComponent,canActivate: [AuthGuard]},
-  {path:"addstudent",component:SFormComponent},
-  {path:"editstudent/:id",component:SFormComponent}
+  {path:"student",
+  loadChildren: () => import('./student/student.module').then(m => m.StudentModule)}
+  
   // ]
   // }
 ];

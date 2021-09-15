@@ -12,7 +12,6 @@ import { GeneralModule } from './general/general.module';
 import { BannerComponent } from './banner/banner.component';
 import { TeacherComponent } from './teacher/teacher.component';
 import { FormComponent } from './teacher/form/form.component';
-import { SFormComponent } from './student/form/form.component';
 import { ClassComponent } from './class/class.component';
 import { AddclassComponent } from './class/addclass/addclass.component';
 import { EditclassComponent } from './class/editclass/editclass.component';
@@ -20,7 +19,6 @@ import { SchoolModule } from './school/school.module';
 import { LoginComponent } from './login/login.component';
 import {AuthService} from './service/auth.service';
 import { RegisterComponent } from './login/register/register.component';
-import { StudentComponent } from './student/student.component';
 
 
 @NgModule({
@@ -34,9 +32,7 @@ import { StudentComponent } from './student/student.component';
     AddclassComponent,
     EditclassComponent,
     LoginComponent,
-    RegisterComponent,
-    StudentComponent,
-    SFormComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

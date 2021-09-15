@@ -30,7 +30,11 @@
     <mat-label>Phone Number</mat-label>
     <input  [(ngModel)]="data.mobile" matInput placeholder="254667">
   </mat-form-field>
-
+  <br/>
+  <mat-form-field appearance="outline">
+    <mat-label>Logo</mat-label>
+    <input  [(ngModel)]="data.logo" matInput placeholder="logo url">
+  </mat-form-field>
 </p>
  <button  (click)="save()" mat-raised-button color="primary">Save</button>
  <button routerLink="/school" mat-raised-button color="primary">Go to school menu</button>

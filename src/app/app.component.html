@@ -2,7 +2,7 @@
 
 <div class="container mainbanr">
   <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-2" *ngIf="_authService.loggedIn()">
       <app-sidebar></app-sidebar>
     </div>
     <div class="col-md-9">

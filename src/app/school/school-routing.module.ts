@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '../auth.guard';
 import { RegisterComponent } from './register/register.component';
+import { SchoolComponent } from './school.component';
 import { SchooltableComponent } from './schooltable/schooltable.component';
 
 const routes: Routes = [
-  {path:'school/add',component:RegisterComponent},
-  {path:'school/update/:id',component:RegisterComponent},
+  {path:'',component:SchoolComponent,canActivate: [AuthGuard]},
+  {path:'add',component:RegisterComponent},
+  {path:'update/:id',component:RegisterComponent},
   {path:'table',component:SchooltableComponent}
 
 ];

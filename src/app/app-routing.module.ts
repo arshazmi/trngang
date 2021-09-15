@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SchoolComponent } from './school/school.component';
 import { TeacherComponent } from './teacher/teacher.component';
 import { ClassComponent } from './class/class.component';
 import { AddclassComponent } from './class/addclass/addclass.component';
@@ -13,13 +12,14 @@ import {AuthGuard} from './auth.guard';
 const routes: Routes = [
   {path:'',component:LoginComponent},
   {path:'register',component:RegisterComponent},
-  {path:'school',component:SchoolComponent,canActivate: [AuthGuard]},
   {path:"teacher",component:TeacherComponent,canActivate: [AuthGuard]},
   {path:"class",component:ClassComponent,canActivate: [AuthGuard]},
   {path:"addclass",component:AddclassComponent},
   {path:"editclass",component:EditclassComponent},
   {path:"addteacher",component:FormComponent},
   {path:"editteacher/:id",component:FormComponent},
+  {path:'school',
+  loadChildren: () => import('./school/school.module').then(m => m.SchoolModule)},
   {path:"student",
   loadChildren: () => import('./student/student.module').then(m => m.StudentModule)}
   

@@ -11,7 +11,7 @@ import { SchoolService } from 'src/app/service/school.service';
 export class RegisterComponent implements OnInit {
 
   listData:any;
-  data:School={id:'',schoolName:'',registerNumber:'',email:'',address:'',mobile:''};///
+  data:School={id:'',schoolName:'',registerNumber:'',email:'',address:'',mobile:'',logo:''};///
   add:boolean=true;
   constructor(private sService:SchoolService,
               private route:ActivatedRoute) { }
@@ -32,6 +32,7 @@ export class RegisterComponent implements OnInit {
       this.data.address=data.address;
       this.data.mobile=data.mobile;
       this.data.email=data.email;
+      this.data.logo=data.logo;
       })
      
     }
@@ -46,6 +47,7 @@ export class RegisterComponent implements OnInit {
       this.data.address="";
       this.data.mobile="";
       this.data.email="";
+      this.data.logo="";
     })
   }else{
     console.log(this.data);
@@ -59,6 +61,7 @@ export class RegisterComponent implements OnInit {
       this.data.address="";
       this.data.mobile="";
       this.data.email="";
+      this.data.logo="";
   });
   } 
 }

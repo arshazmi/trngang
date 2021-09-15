@@ -10,8 +10,10 @@
                       <input type ="text" name="name" #teachername><br>
                       </div>
                        <input type="button" class="btn" (click)="getStudOfTeacher(teachername.value)" value="Search">
+
                     <div class="col-md-12 col-sm-6" *ngIf="normal">
-                        <div class="project-item" *ngFor="let stud of student">
+                      <!--Student Card-->
+                        <!-- <div class="project-item" *ngFor="let stud of student">
                             <h2>{{stud.firstName}}</h2>
                             <ul>
                                 <li>{{stud.lastName}}</li>
@@ -30,8 +32,61 @@
                                 </ul>
                             </div>
                             <hr>
+                        </div> -->
+                        <div class="row">
+                          <div class="col-12">
+                            <div class="card">
+                              <div class="card-header">                        
+                                <div class="card-tools">
+                                  <div class="input-group input-group-sm" style="width: 150px;">
+                                    <!-- <input type="text" name="table_search" class="form-control float-right" placeholder="Search"> -->
+                      
+                                    <div class="input-group-append">
+                                      <!-- <button type="submit" class="btn btn-default">
+                                        <i class="fa fa-search"></i>
+                                      </button> -->
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="card-body table-responsive p-0">
+                                <table class="table table-hover text-nowrap">
+                                  <thead>
+                                    <tr>
+                                      <th>FirstName</th>
+                                      <th>LastName</th>
+                                      <th>Email</th>
+                                      <th>Gender</th>
+                                      <th>Contact Number</th>
+                                      <th colspan="2">Actions</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr  *ngFor="let stud of student">
+                                      
+                                      <td>{{stud.firstName}}</td>
+                                      <td>{{stud.lastName}}</td>
+                                      <td>{{stud.email}}</td>
+                                      <td>{{stud.gender}}</td>
+                                      <td>{{stud.mobile}}</td>
+                                      <td  (click)="deleteStudent(stud)">
+                                        <i class="fa fa-trash" aria-hidden="true"></i></td>
+                                      <td (click)="editStudent(stud)" >
+                                        <a ><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                                    </tr>
+                                 
+                                  </tbody>
+                                </table>
+                              </div>
+                              
+                            </div>
+                       
+                          </div>
                         </div>
+
                     </div>
+
                     <div class="col-md-12 col-sm-6" *ngIf="!normal">
                         <!-- <div class="project-item" *ngFor="let d of data">
                             <h2>{{d.firstName}}</h2>

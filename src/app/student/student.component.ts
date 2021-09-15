@@ -11,7 +11,7 @@ export class StudentComponent implements OnInit {
   normal:boolean=true;
   data:any;
   toStudent :any ="Student";
-  teachername:string='hi';
+ // teachername:string='';
   student=[{
     id:'',
     firstName: '',
@@ -58,11 +58,14 @@ export class StudentComponent implements OnInit {
 
   getStudOfTeacher(teachername:string){
     console.log(teachername," obtained");
-    this.studService.getStudentByTeacher(teachername).subscribe(data=>{
-      console.log(data);
-      this.data=data;
-      this.normal=false;
-    })
+    if(teachername!==''){
+      this.studService.getStudentByTeacher(teachername).subscribe(data=>{
+        console.log(data);
+        this.data=data;
+        this.normal=false;
+      })
+    }
+    this.normal=true;
   }
 
 

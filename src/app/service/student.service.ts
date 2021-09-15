@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import { Student } from '../models/student';
+import { StudPageResponse } from '../models/pager';
 
 @Injectable({
   providedIn: 'root'
@@ -46,5 +46,9 @@ export class StudentService {
     return this.http.delete(`${this.baseUrl}/${id}`)
     // .subscribe(data =>{console.log(data)})
 
+  }
+
+  getPage(page:Number):Observable<StudPageResponse>{
+   return this.http.get<StudPageResponse>(`${this.baseUrl}/test/items?page=${page}`)
   }
 }

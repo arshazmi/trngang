@@ -24,8 +24,24 @@ export class StudentComponent implements OnInit {
     doj:''
    }]
 
+   pager= {
+       totalItems: 0,
+       currentPage: 0,
+       pageSize: 0,
+       totalPages: 0,
+       startPage: 0,
+       endPage: 0,
+       startIndex: 0,
+       endIndex: 0,
+       pages: [0]
+     
+   };
+   pageOfItems = [{id:'',name:''}];
+
   constructor(private router:Router,private route: ActivatedRoute,
-    private studService:StudentService) { }
+    private studService:StudentService) {
+      this.setPage(1);//remove if no pagination
+     }
 
   ngOnInit(): void {
     this.studService.getStudents().subscribe((data)=>{
@@ -67,6 +83,15 @@ export class StudentComponent implements OnInit {
     }
     this.normal=true;
   }
+
+  setPage(page: number) {
+    // get new pager object and page of items from the api
+    this.studService.getPage(page)
+        .subscribe(response => {
+            this.pager = response.pager;
+            this.pageOfItems = response.pageOfItems;
+        });
+}
 
 
 }

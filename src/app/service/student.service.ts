@@ -48,7 +48,7 @@ export class StudentService {
 
   }
 
-  getPage(page:Number):Observable<StudPageResponse>{
-   return this.http.get<StudPageResponse>(`${this.baseUrl}/test/items?page=${page}`)
+  getPage(page?:Number):Observable<StudPageResponse>{
+   return this.http.get<StudPageResponse>(`${this.baseUrl}/list/view?page=${page}`)
   }
 }

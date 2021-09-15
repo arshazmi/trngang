@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Student } from '../models/student';
 import { StudentService } from '../service/student.service';
 
 @Component({
@@ -36,7 +37,7 @@ export class StudentComponent implements OnInit {
        pages: [0]
      
    };
-   pageOfItems = [{id:'',name:''}];
+   pageOfItems:Student[] = [];
 
   constructor(private router:Router,private route: ActivatedRoute,
     private studService:StudentService) {
@@ -44,11 +45,15 @@ export class StudentComponent implements OnInit {
      }
 
   ngOnInit(): void {
-    this.studService.getStudents().subscribe((data)=>{
-      console.log(data);
-      this.student=JSON.parse(JSON.stringify(data));
-  })
-
+    // this.studService.getStudents().subscribe((data)=>{
+    //   console.log(data);
+    //   this.student=JSON.parse(JSON.stringify(data));
+  //})
+  this.studService.getPage()
+  .subscribe(response => {
+      this.pager = response.pager;
+      this.pageOfItems = response.pageOfItems;
+  });
   }
 
   editStudent(item:any)
